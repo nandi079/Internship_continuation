@@ -47,3 +47,48 @@ def open_newlaunch_filter(context):
 @then('Verify each product contains the Newly Launched tag')
 def verify_newlaunch_tag(context):
     context.app.main_page.verify_newlaunch_tag()
+
+
+@given('Open the main page')
+def open_main_page(context):
+    context.app.main_page.open_main_page()
+
+
+@when('Log in to the page')
+def login(context):
+    context.app.main_page.login()
+
+
+@then('Click on the Continue button')
+def click_on_continue(context):
+    context.app.main_page.click_on_continue()
+
+
+@when('Click on Connect the company')
+def click_on_company(context):
+    context.app.main_page.click_on_company()
+
+
+@then('Switch the new tab')
+def switch_new_tab(context):
+    context.app.main_page.switch_new_tab()
+
+
+@then('Verify the right tab opens')
+def switch_new_tab(context):
+    context.app.main_page.switch_new_tab()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
