@@ -66,6 +66,16 @@ class Page:  # generic base page
         actual_text = self.find_element(*locator).text
         assert actual_text == expected_text, f'Expected {expected_text} but got {actual_text}'
 
+    def verify_entered_text(self, expected_text, *locator):
+        textfield = self.find_element(*locator)
+        entered_text = textfield.get_attribute("value")
+        assert expected_text in entered_text, f"Expected {expected_text} but got {entered_text}"
+
+    def replace_text(self, text, *locator):
+        element = self.find_element(*locator)
+        element.clear()
+        element.send_keys(text)
+
     def verify_partial_text(self, expected_text, *locator):
         actual_text = self.find_element(*locator).text
         assert expected_text in actual_text, f'Expected {expected_text} not in {actual_text}'
@@ -77,6 +87,10 @@ class Page:  # generic base page
 
     def save_screenshot(self, name):
         self.driver.save_screenshot(f'{name}.png')
+
+    def clear_element(self, *locator):
+        logger.info(f'Searching by {locator}')
+        return self.driver.find_element(*locator).clear()
 
 
     def close(self):

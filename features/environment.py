@@ -1,8 +1,12 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 
 from app.application import Application
@@ -17,15 +21,19 @@ def browser_init(context):
     context.driver = webdriver.Chrome(service=service)
 
     ##chrome function
-    driver_path = GeckoDriverManager().install()
-    service = Service(driver_path)
-    context.driver = webdriver.Firefox(service=service)
+    #driver_path = GeckoDriverManager().install()
+    #service = Service(driver_path)
+    #context.driver = webdriver.Firefox(service=service)
 
     context.driver.maximize_window()
     context.driver.implicitly_wait(4)
     context.wait = WebDriverWait(context.driver, timeout=15)
 
     context.app = Application(context.driver)  # excess to main_page, header, search_result_page
+
+    driver = webdriver.Chrome()
+    action = ActionChains(driver)
+    action.send_keys(Keys.PAGE_DOWN).perform()
 
 
 def before_scenario(context, scenario):

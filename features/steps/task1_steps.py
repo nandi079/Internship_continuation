@@ -79,10 +79,31 @@ def switch_new_tab(context):
     context.app.main_page.switch_new_tab()
 
 
+@then('Click on settings option')
+def click_on_settings(context):
+    context.driver.execute_script("window.scrollBy(0,2000)","")
+    context.app.main_page.click_on_settings()
 
 
+@then('Click on Edit profile option')
+def click_on_edit(context):
+    context.app.main_page.click_on_edit()
 
 
+@then('Enter expected text in the expected fields')
+def test_information_input_fields(context):
+    sleep(5)
+    context.app.main_page.test_information_input_fields()
+
+
+@then('Check the right information is present in the input fields.')
+def verify_information_input_fields(context):
+    context.app.main_page.verify_information_input_fields()
+
+
+@then('Check “Close” and “Save Changes” buttons are available and clickable.')
+def verify_close_save_buttons(context):
+    context.app.main_page.verify_close_save_buttons()
 
 
 

@@ -25,6 +25,17 @@ Feature: Test case AQA_internship
     Then  Verify the right tab opens
 
 
+  Scenario: User can go to settings and edit the personal information
+    Given Open the main page
+    When  Log in to the page
+    Then  Click on the continue button
+    Then  Click on settings option
+    Then  Click on Edit profile option
+    Then  Enter expected text in the expected fields
+    Then  Check the right information is present in the input fields.
+    Then  Check “Close” and “Save Changes” buttons are available and clickable.
+
+
 
 
 
