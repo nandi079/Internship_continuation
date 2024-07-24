@@ -18,11 +18,12 @@ class Task4Page(Page):
         self.click(*self.EDIT_LANGUAGE)
 
     def verify_the_language(self):
+        #self.verify_text('Главное меню', *self.CHANGE_LANGUAGE)
         all_listing = self.find_elements(*self.VERIFY_LANGUAGE)
 
         for listing in all_listing:
             title = listing.find_element(*self.VERIFY_LANGUAGE).text
-            assert title, 'Главное меню'
+            assert title, 'RU'#'Главное меню'
 
 
 
