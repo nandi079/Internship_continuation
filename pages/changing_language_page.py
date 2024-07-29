@@ -1,9 +1,8 @@
 from selenium.webdriver.common.by import By
 from pages.base_page import Page
-from selenium.webdriver.support.ui import Select
-from time import sleep
 
-class Task4Page(Page):
+
+class ChangingLanguagePage(Page):
     MAIN_MENU_LINK = (By.XPATH, "//div[@class='menu-button-text' and text()='Main menu']")
     EDIT_LANGUAGE = (By.XPATH, "//a[@tabindex ='0' and text()='RU']")
     CHANGE_LANGUAGE = (By.CSS_SELECTOR, "[id='w-dropdown-toggle-0']")
@@ -24,20 +23,4 @@ class Task4Page(Page):
         for listing in all_listing:
             title = listing.find_element(*self.VERIFY_LANGUAGE).text
             assert title, 'RU'#'Главное меню'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
