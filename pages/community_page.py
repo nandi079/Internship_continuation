@@ -6,7 +6,6 @@ class CommunityPage(Page):
     COMMUNITY_BUTTON = (By.XPATH, "//div[@class='setting-text' and text()='Community']")
     VERIFY_CONTACT_SUPPORT = (By.XPATH, "//a[@href='/notification' and text()='Contact support']")
     CLICK_CONTACT_SUPPORT = (By.XPATH, "//a[@id='w-node-_746955f8-6d08-524d-7f43-03daaced30ff-7f66deba' and text()='Contact support']")
-    #NEW_CONTACT_PAGE = 'https://t.me/reelly_dubai_bot?start=w18415667'
 
     def click_community_option(self):
         self.wait_until_clickable_click(*self.COMMUNITY_BUTTON)
