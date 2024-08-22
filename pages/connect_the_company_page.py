@@ -15,7 +15,7 @@ class ConnectTheCompanyPage(Page):
         self.wait_until_clickable_click(*self.CLICK_CONTACT)
 
     def verify_correct_page_opening(self):
-        self.verify_partial_text('',*self.VERIFYING_PAGE)
+        self.verify_partial_text('Connect the company',*self.VERIFYING_PAGE)
 
     def verify_social_media_icons(self):
         self.wait_until_visible(*self.INSTAGRAM_LINK)
