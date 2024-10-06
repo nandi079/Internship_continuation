@@ -8,6 +8,7 @@ from pages.subscription_and_payments_page import SubscriptionAndPaymentsPage
 from pages.support_option_page import SupportOptionPage
 from pages.user_change_password_page import UserChangePasswordPage
 from pages.user_guide_videos_option_page import UserGuideVideosOptionPage
+from pages.verify_12_setting_options_page import Verify12SettingOptionsPage
 
 
 class Application:
@@ -22,7 +23,7 @@ class Application:
         self.support_option_page = SupportOptionPage(driver)
         self.user_change_password_page = UserChangePasswordPage(driver)
         self.user_guide_videos_option_page = UserGuideVideosOptionPage(driver)
-
+        self.verify_12_setting_options_page = Verify12SettingOptionsPage(driver)
 
 
 
