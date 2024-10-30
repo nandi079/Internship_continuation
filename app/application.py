@@ -10,6 +10,7 @@ from pages.user_change_password_page import UserChangePasswordPage
 from pages.user_guide_videos_option_page import UserGuideVideosOptionPage
 from pages.verify_12_setting_options_page import Verify12SettingOptionsPage
 from pages.verify_pagination_button_page import VerifyPaginationButtonPage
+from pages.verify_all_card_products_page import VerifyAllCardProductsPage
 
 
 class Application:
@@ -26,6 +27,7 @@ class Application:
         self.user_guide_videos_option_page = UserGuideVideosOptionPage(driver)
         self.verify_12_setting_options_page = Verify12SettingOptionsPage(driver)
         self.verify_pagination_button_page = VerifyPaginationButtonPage(driver)
+        self.verify_all_card_products_page = VerifyAllCardProductsPage(driver)
 
 
 
