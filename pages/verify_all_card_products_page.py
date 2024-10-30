@@ -8,6 +8,7 @@ class VerifyAllCardProductsPage(Page):
     CLICK_WTS = (By.XPATH, "//div[@class='tag-text-filters' and text()='Want to sell']")
     CLICK_APPLY_FILTER = (By.XPATH, "//a[@wized='applyFilterButtonMLS' and text()='Apply filter']")
     VERIFY_SALE_TAG = (By.XPATH, "//div[@wized='saleTagMLS' and text()='For sale']")
+    VERIFY_CARDS = (By.XPATH, "//div[@wized='listingCardMLS']")
 
     def verification_sec_page(self):
         self.verify_text('My listings', *self.VERIFY_SEC_PAGE)
@@ -23,12 +24,13 @@ class VerifyAllCardProductsPage(Page):
         self.click(*self.CLICK_APPLY_FILTER)
 
     def verify_all_card_for_sale(self):
-        all_listing = self.find_elements(*self.VERIFY_SALE_TAG)
+        all_listing = self.find_elements(*self.VERIFY_CARDS)
+        print(all_listing)
 
         for listing in all_listing:
             title = listing.find_element(*self.VERIFY_SALE_TAG).text
             print(title)
-            assert title, 'For sale'
+            assert title, 'For sale not present'
 
 
 
