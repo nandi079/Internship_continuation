@@ -12,6 +12,7 @@ from pages.verify_12_setting_options_page import Verify12SettingOptionsPage
 from pages.verify_pagination_button_page import VerifyPaginationButtonPage
 from pages.verify_all_card_products_page import VerifyAllCardProductsPage
 from pages.verify_all_cards_want_to_buy_page import VerifyAllCardsWantToBuyPage
+from pages.verify_unit_price_range_page import VerifyUnitPriceRangePage
 
 
 class Application:
@@ -30,7 +31,7 @@ class Application:
         self.verify_pagination_button_page = VerifyPaginationButtonPage(driver)
         self.verify_all_card_products_page = VerifyAllCardProductsPage(driver)
         self.verify_all_cards_want_to_buy_page = VerifyAllCardsWantToBuyPage(driver)
-
+        self.verify_unit_price_range_page = VerifyUnitPriceRangePage(driver)
 
 
 
