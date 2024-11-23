@@ -12,13 +12,17 @@ class VerifyUnitPriceRangePage(Page):
 
     def add_price_range_from_unit(self):
         self.wait_until_visible(*self.VERIFY_UNIT)
+        self.wait_until_visible(*self.FROM_INPUT)
         self.clear_element(*self.FROM_INPUT)
         self.input_text('1200000', *self.FROM_INPUT)
+        self.wait_until_visible(*self.TO_INPUT)
         self.clear_element(*self.TO_INPUT)
         self.input_text('2000000', *self.TO_INPUT)
+        self.wait_until_visible(*self.APPLY_FILTER)
         self.wait_until_clickable_click(*self.APPLY_FILTER)
 
     def verify_all_cards_inside_range(self):
+        self.wait_until_visible(*self.VERIFY_CARDS)
         all_videos = self.find_elements(*self.VERIFY_CARDS)
 
         for video in all_videos:
